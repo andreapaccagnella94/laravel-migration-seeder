@@ -25,7 +25,7 @@ class TrainsTableSeeder extends Seeder
 
         $faker->timezone = 'Europe/Rome';
         $start = Carbon::parse(today());
-        dd($start);
+        // Carbon::setTimezone('Europe/Rome');
         for ($i = 0; $i < 10; $i++) {
 
             $newTrain = new Train();
