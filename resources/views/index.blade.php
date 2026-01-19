@@ -4,8 +4,9 @@
 
 @section('content') 
 
+
     <div class="container py-5">
-    <h1 class="mb-4 text-center">Elenco Treni (date > {{$todayFormatted}})</h1>
+    <h1 class="mb-4 text-center">Elenco Treni (date > {{($today)->format('d-m-Y H:i')}})</h1>
 
     <div class="table-responsive">
         <table class="table table-striped table-hover table-sm align-middle">

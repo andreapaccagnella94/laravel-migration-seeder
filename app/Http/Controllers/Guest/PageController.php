@@ -16,11 +16,11 @@ class PageController extends Controller
         $today = Carbon::now("Europe/Rome");
         $todayFormatted = $today->format("d-m-Y");
         // dd($todayFormatted);
-        $trains = Train::where("departure_time", ">", today())
+        $trains = Train::where("departure_time", ">", $today)
             ->orderBy("departure_time", "asc") /* crescente -> asc ---- decrescente -> desc */
             ->get();
         // dd($trains);
 
-        return view("index", compact("trains", "todayFormatted"));
+        return view("index", compact("trains", "today", "todayFormatted"));
     }
 }
