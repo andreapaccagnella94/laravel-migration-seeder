@@ -14,6 +14,7 @@ class PageController extends Controller
     {
         $today = today();
         $todayFormatted = $today->format("d-m-Y");
+        // dd($todayFormatted);
         $trains = Train::where("departure_time", ">", today())
             ->orderBy("departure_time", "asc") /* crescente -> asc ---- decrescente -> desc */
             ->get();
